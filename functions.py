@@ -13,3 +13,9 @@ def get_sentiment(diary_paths):
         diary_score_map[path.split('/')[1].split('.')[0]] = score
 
     return diary_score_map
+
+
+def write_new_entry(diary):
+    diary_entry = diary.read()
+    with open(f"diary/{diary.name}", "wb") as file:
+        file.write(diary_entry)
